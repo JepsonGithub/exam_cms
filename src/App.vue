@@ -42,8 +42,6 @@ html, body {
 #app {
   padding-top: 40px;
   padding-bottom: 60px;
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
 }
 .container {

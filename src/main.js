@@ -11,6 +11,10 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use( MintUI )
 
+
+
+
+
 // ------------ 引入 字体图标 -------------
 import "./assets/iconfonts/iconfont"
 import "./assets/iconfonts/iconfont.css"

@@ -63,7 +63,7 @@ export default {
 .ms-footer{
   height: 60px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color:#F7F7F7;
 
