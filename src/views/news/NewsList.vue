@@ -2,21 +2,23 @@
   <div>
     <ul class="newslist">
       <li class="item" v-for="(item, index) in listArr" :key="index">
-        <div class="showImg">
-          <img :src="item.img_url" width="24" height="24" alt="">
-        </div>
-        <div class="info">
-          <div class="info-tit">
-            {{ item.title }}
+        <router-link :to="'/home/newsDetail/' + item.id">
+          <div class="showImg">
+            <img :src="item.img_url" width="24" height="24" alt="">
           </div>
-          <div class="info-more">
-            <span class="time">{{ item.add_time | dateFormater }}</span>
-            <span class="click"><i class="iconfont icon-comments"></i> {{ item.click }}</span>
+          <div class="info">
+            <div class="info-tit">
+              {{ item.title }}
+            </div>
+            <div class="info-more">
+              <span class="time">{{ item.add_time | dateFormat }}</span>
+              <span class="click"><i class="iconfont icon-comments"></i> {{ item.click }}</span>
+            </div>
           </div>
-        </div>
-        <div class="right-icon">
-          <span class="iconfont icon-more"></span>
-        </div>
+          <div class="right-icon">
+            <span class="iconfont icon-more"></span>
+          </div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -25,6 +27,7 @@
 <script>
 import axios from "axios"
 import { host } from "@/common/config"
+import dateFormat from "@/filters/dateFormat"
 
 export default {
   data() {
@@ -36,8 +39,10 @@ export default {
     // 发送请求, 请求数据
     axios.get( `${host}/api/getnewslist` ).then( res => {
       this.listArr = res.data.message
-      console.log( this.listArr )
     })
+  },
+  filters: {
+    dateFormat
   }
 }
 </script>
@@ -50,8 +55,12 @@ export default {
 
   .item {
     height: 80px;
-    display: flex;
     border-bottom: 1px solid #E3E3E5;
+    > a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
 
     .showImg {
       height: 80px;

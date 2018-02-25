@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <mt-header fixed title="黑马程序员-CMS管理系统"></mt-header>
+    <mt-header fixed title="黑马程序员-CMS管理系统">
+      <mt-button slot="left" @click="$router.go(-1)" v-if="$route.path != '/home'" icon="back">返回</mt-button>
+      <mt-button slot="right" icon="more" ></mt-button>
+    </mt-header>
     <router-view/>    
     <ms-footer></ms-footer>
   </div>

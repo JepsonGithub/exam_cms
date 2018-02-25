@@ -6,6 +6,7 @@ import CartContainer from "@/layout/tabContainer/CartContainer"
 import SearchContainer from "@/layout/tabContainer/SearchContainer"
 
 import NewsList from "@/views/news/NewsList"
+import NewsDetail from "@/views/news/NewsDetail"
 
 Vue.use(Router)
 
@@ -42,6 +43,10 @@ export default new Router({
     {
       path: "/home/newslist",
       component: NewsList
+    },
+    {
+      path: "/home/newsDetail/:id",
+      component: NewsDetail
     }
     /* 新闻资讯相关的路由 */
   ]
