@@ -1,6 +1,6 @@
 <template>
-  <div>
-    
+  <div class="container">
+    购物车模块
   </div>
 </template>
 
