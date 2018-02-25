@@ -10,8 +10,7 @@
             {{ item.title }}
           </div>
           <div class="info-more">
-            <!-- <span class="time">2015-04-16 11:50:28</span> -->
-            <span class="time">{{ item.add_time }}</span>
+            <span class="time">{{ item.add_time | dateFormater }}</span>
             <span class="click"><i class="iconfont icon-comments"></i> {{ item.click }}</span>
           </div>
         </div>

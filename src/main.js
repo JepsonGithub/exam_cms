@@ -12,7 +12,11 @@ import 'mint-ui/lib/style.css'
 Vue.use( MintUI )
 
 
+import moment from "moment"
 
+Vue.filter("dateFormater", (value, str) => {
+  return moment( value ).format( str || "YYYY-MM-DD HH:mm:SS");
+})
 
 
 // ------------ 引入 字体图标 -------------
