@@ -43,11 +43,12 @@ export default {
   },
   methods: {
     // 加载更多页
-    getMore() {
+    // 如果配置 more 为 false, 表示重新按照 pageIndex 加载
+    getMore(more=true) {
       this.pageIndex++;
       axios
         .get( `${host}/api/getcomments/${this.newsid}?pageindex=${this.pageIndex}` )
-        .then( res => this.commentlist = this.commentlist.concat( res.data.message ) )
+        .then( res => this.commentlist = more ? this.commentlist.concat( res.data.message ) :  res.data.message )
     },
     // 发表评论
     sendComment() {
@@ -58,9 +59,8 @@ export default {
       }).then(info=>{
         if( info.status === 200 ) {
           this.pageIndex = 0;
-          this.commentlist = [];
           this.commentValue = "";
-          this.getMore();
+          this.getMore(false)
         }
       })
     }
