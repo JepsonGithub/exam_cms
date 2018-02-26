@@ -8,15 +8,20 @@
       </p>
     </div>
     <div class="news-content" v-html="detail.content"></div>
+    <div class="news-comment">
+      <!-- 自定义评论组件 -->
+      <comment :newsid="newsid"></comment>
+    </div>
   </div>
 </template>
 
 <script>
 import { host } from "@/common/config"
 import axios from "axios"
-
+// 日期过滤器
 import dateFormat from "@/filters/dateFormat"
-console.log( dateFormat )
+// 导入组件
+import comment from "@/components/comment/Comment"
 
 export default {
   data() {
@@ -34,6 +39,9 @@ export default {
   },
   filters: {
     dateFormat
+  },
+  components: {
+    comment
   }
 }
 </script>
