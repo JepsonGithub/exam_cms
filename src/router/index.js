@@ -7,6 +7,7 @@ import SearchContainer from "@/layout/tabContainer/SearchContainer"
 
 import NewsList from "@/views/news/NewsList"
 import NewsDetail from "@/views/news/NewsDetail"
+import PicShare from "@/views/picShare/PicShare"
 
 Vue.use(Router)
 
@@ -47,7 +48,14 @@ export default new Router({
     {
       path: "/home/newsDetail/:id",
       component: NewsDetail
-    }
+    },
     /* 新闻资讯相关的路由 */
+
+    /* 图片分享页面 */
+    {
+      path: "/home/picShare/:cateid?",
+      component: PicShare
+    }
+    /* 图片分享页面 */
   ]
 })

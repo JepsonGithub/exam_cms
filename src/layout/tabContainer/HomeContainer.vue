@@ -14,7 +14,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="">
+        <router-link to="/home/picShare">
           <img src="../../assets/images/menu2.png" alt="">
           <p>图片分享</p>
         </router-link>
