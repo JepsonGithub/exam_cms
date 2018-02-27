@@ -8,6 +8,8 @@ import SearchContainer from "@/layout/tabContainer/SearchContainer"
 import NewsList from "@/views/news/NewsList"
 import NewsDetail from "@/views/news/NewsDetail"
 import PicShare from "@/views/picShare/PicShare"
+import GoodsList from "@/views/goods/GoodsList"
+import GoodsDetail from "@/views/goods/GoodsDetail"
 
 Vue.use(Router)
 
@@ -55,7 +57,18 @@ export default new Router({
     {
       path: "/home/picShare/:cateid?",
       component: PicShare
-    }
+    },
     /* 图片分享页面 */
+
+    /* 商品购买页面 */
+    {
+      path: "/home/goodsList",
+      component: GoodsList
+    },
+    {
+      path: "/home/goodsDetail/:goodsid",
+      component: GoodsDetail
+    }
+    /* 商品购买页面 */
   ]
 })

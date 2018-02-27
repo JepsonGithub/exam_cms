@@ -20,7 +20,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="">
+        <router-link to="/home/goodsList">
           <img src="../../assets/images/menu3.png" alt="">
           <p>商品购买</p>
         </router-link>
