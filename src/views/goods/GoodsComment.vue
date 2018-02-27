@@ -15,9 +15,6 @@ export default {
   },
   components: {
     comment
-  },
-  created() {
-    console.log( this.$route.params )
   }
 }
 </script>
