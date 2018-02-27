@@ -10,6 +10,7 @@ import NewsDetail from "@/views/news/NewsDetail"
 import PicShare from "@/views/picShare/PicShare"
 import GoodsList from "@/views/goods/GoodsList"
 import GoodsDetail from "@/views/goods/GoodsDetail"
+import GoodsComment from "@/views/goods/GoodsComment"
 
 Vue.use(Router)
 
@@ -68,6 +69,10 @@ export default new Router({
     {
       path: "/home/goodsDetail/:goodsid",
       component: GoodsDetail
+    },
+    {
+      path: "/home/goodsComment/:goodsid",
+      component: GoodsComment
     }
     /* 商品购买页面 */
   ]
